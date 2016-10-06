@@ -1,3 +1,17 @@
+/* Works for both the ATmega328P and the ATSAMD21G18
+ *  ATSAMD21G18 :  
+ *  Digital Read  - changed from 1.000us to 0.800us
+ *  Digital Write - changed from 3.088us to 1.576us
+ *  PinMode       - cahnged from 1.860us to 1.640us
+ *  ATmega328P :
+ *  Digial Read   - changed from  3.920us to 2.440us
+ *  Digital Write - changed from 10.680us to 3.480us 
+ *  Pinmode       - changed from  4.420us to 5.860us
+ */
+
+
+
+
 
 #ifdef ARDUINO_ARCH_AVR   // determines size (8 v. 32 bit) depending on the board
 #define REGTYPE uint8_t
@@ -90,9 +104,7 @@ int fdigitalRead(int pinNum)
 }
 
 
-
-
-/*
-   https://github.com/arduino/Arduino/blob/8385aedc642d6cd76b50ac5167307121007e5045/hardware/arduino/avr/cores/arduino/wiring_digital.c
-   https://github.com/arduino/Arduino/blob/8385aedc642d6cd76b50ac5167307121007e5045/hardware/arduino/sam/cores/arduino/wiring_digital.c
+/* 
+  ATmega328P -  https://github.com/arduino/Arduino/blob/8385aedc642d6cd76b50ac5167307121007e5045/hardware/arduino/avr/cores/arduino/wiring_digital.c
+  ATSAMD21G18 - https://github.com/arduino/Arduino/blob/8385aedc642d6cd76b50ac5167307121007e5045/hardware/arduino/sam/cores/arduino/wiring_digital.c
 */
